@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head', { title: 'perfil' , stylesheet: ['/css/styles.css','/css/profile.css']}) %> 
+
+<body>
+    <%- include('../partials/header') %> 
+        
+    <main class="contPerfil">         
+         <h2 class="titulo"> Bienvenido <%= user.firstName %></h2>
+         
+         <section class="conteinerProfile">
+
+            <div class="imageProfile">
+                <img src="/img/users/<%= user.imageUser %>" alt="foto de perfil" class="imgProfile"
+                width="100%" height=auto>
+            </div>
+            
+            <div class="datosProfile">
+
+                <h3 class="titulo"><strong>MIS DATOS PERSONALES</strong></h3>
+                <h3 class="datosEstandar">Nombre Completo</h3>
+                <p class="mostrarDatos"><%= user.firstName %> <%= user.lastName %></p>
+                <h3 class="datosEstandar">Correo electronico</h3>
+                <p class="mostrarDatos"><%= user.email %></p>
+                
+            <button class="boton"><a class="enlaces" href="/users/logout">CERRAR SESIÓN</a></button>  
+
+            </div>         
+        </section>    
+   
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+
+</html>
+

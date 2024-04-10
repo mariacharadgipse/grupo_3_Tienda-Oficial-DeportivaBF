@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', { title: 'Edit' , stylesheet: ['/css/styles.css','/css/productEdit.css']}) %>
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main class="formContenedor">
+                <h2 class="tituloEdit"><strong>Editar:</strong> <i>
+                        <%= pToEdit.name %>
+                    </i></h2>
+                    <form action="/products/edit/<%= pToEdit.id %>?_method=PUT" method="POST"
+                        enctype="multipart/form-data" class="formCE">
+
+                        <div class="elementForm">
+                            <label for="name" class="label-form">Nombre del Producto</label>
+                            <input type="text" id="name" name="name" class="control" placeholder="Nombre del producto"
+                                value=" <%= pToEdit.name  || (locals.oldData && oldData.name ? oldData.name : null )%>">
+                            <% if (locals.errors && errors.name) { %>
+                                <p class="mensajeError">
+                                    <%= errors.name.msg %>
+                                </p>
+                                <% } %>
+                                <p class="error-input-name"></p>
+                        </div>
+
+                        <div class="elementForm">
+                            <label for="price">Precio</label>
+                            <input type="text" id="price" name="price" class="control" placeholder="$2789"
+                                value="<%= pToEdit.price  || (locals.oldData && oldData.price ? oldData.price : null )%>"></input>
+                            <% if (locals.errors && errors.price) { %>
+                                <p class="mensajeError">
+                                    <%= errors.price.msg %>
+                                </p>
+                                <% } %>
+                                <p class="error-input-price"></p>
+                                <p class="error-input-price2"></p>
+                        </div>
+
+                        <div class="elementForm">
+                            <label for="discount">Descuento</label>
+                            <input type="text" id="discount" name="discount" class="control" placeholder="20%"
+                                value="<%= pToEdit.discount %>"></input>
+                                <p class="error-input-discount"></p>
+                        </div>
+
+                        <div class="elementForm">
+                            <label for="category">Categoría</label>
+                            <select name="category" id="category" class="control">
+                                <option value="1" selected>Calzados</option>
+                                <option value="2">Accesorios</option>
+                                <option value="3">Indumentaria</option>
+                            </select>
+                        </div>
+
+                            <label for="description">Descripción</label>
+                            <textarea name="description" id="description"
+                                class="control"> <%= pToEdit.description %> </textarea>
+                                <p class="error-input-description"></p>
+                                <p class="error-input-description2"></p>
+
+
+                        <div class="elementForm">
+                            <label>Colores</label>
+                            <input type="text" name="idColor" class="control"
+                                value=" <%= pToEdit.idColor  || (locals.oldData && oldData.idColor ? oldData.idColor : null )%>"></input>
+                            <% if (locals.idColor && errors.idColor) { %>
+                                <p class="mensajeError">
+                                    <%= errors.idColor.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+
+                            <label for="image">Imágenes del producto</label>
+                            <input type="file" name="images" id="images" class="control" accept=".jpg, .png"
+                                multiple></input>
+                                <p class="error-input-imageCE"></p>
+
+                    <div class="botonesCreate">
+                        <button type="reset" class="botonFormB">Restablecer</button>
+                        <button type="submit" class="botonFormG">Guardar</button>
+                    </div>
+
+                    </form>
+            </main>
+    <%- include('../partials/footer')%>
+
+
+    <script src="/js/validatorCreateEdit.js"></script>
+    </body>
+</html>

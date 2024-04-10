@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', { title: 'Registro' , stylesheet: ['/css/styles.css','/css/register.css']}) %>
+
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main>
+
+                <div class="register-container">
+                    <img class="tienda" src="/img/Tienda.png" alt="">
+
+                    <div class="register" id="registerContenedor">
+                        <p> <img class="logoSinFondo" src="/img/LogoSinFondo.png" alt="logoSinFondo"></p>
+                        <h2>Creá una nueva cuenta</h2>
+
+                        <form action="/users/register" method="POST" enctype="multipart/form-data" class="formR"
+                            id="formR">
+                            <label for="labelNombre">Nombre:</label>
+                            <input type="text" name="firstName" id="firstName" placeholder="Nombre"
+                                class="color-input equal-size" value="<%= locals.old &&
+                                        old.firstName ? old.firstName : '' %>">
+                            <p class="error-input-firstName"></p>
+
+                            <label for="labelApellido">Apellido:</label>
+                            <input type="text" name="lastName" id="lastName" placeholder="Apellido"
+                                class="color-input equal-size"
+                                value="<%= locals.old && old.lastName  ? old.lastName : '' %>">
+                            <p class="error-input-lastName"></p>
+
+                            <label for="labelEmail">Correo electrónico:</label>
+                            <input type="text" name="email" id="email" placeholder="Correo electrónico"
+                                class="color-input equal-size" value="<%= locals.old && old.email  ? old.email : '' %>">
+                            <p class="error-input-email"></p>
+                            <p class="error-input-email2"></p>
+
+                            <label for="labelContraseña">Contraseña:</label>
+                            <input type="password" name="password" id="password" placeholder="Contraseña"
+                                class="color-input equal-size" autocomplete="on">
+                            <p class="error-input-password"></p>
+
+                            <label for="idcategoryUser" class="elementForm">Categoria:</label>
+                            <select id="idcategoryUser" name="idcategoryUser" class="color-input equal-size">
+
+                                <option value="1" selected <%=locals.old && old.idcategoryUser==='1' ? 'selected' : '' ;
+                                    %>>administrador</option>
+
+                                <option value="2" <%=locals.old && old.idcategoryUser==='2' ? 'selected' : '' ; %>>
+                                    vendedor</option>
+
+                                <option value="3" <%=locals.old && old.idcategoryUser==='3' ? 'selected' : '' ; %>
+                                    >cliente</option>
+                            </select>
+
+                            <label for="imageUser" class="elementForm">Foto de perfil</label>
+                            <input type="file" id="imageUser" name="imageUser" class="color-input equal-size"
+                                accept=".jpg, .png" multiple></input>
+
+                            <button type="submit">Crear Cuenta</button>
+                        </form>
+                    </div>
+                </div>
+
+            </main>
+            <%- include('../partials/footer') %>
+
+                <script src="/js/validatorRegister.js"></script>
+    </body>
+
+</html>

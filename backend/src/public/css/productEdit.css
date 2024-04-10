@@ -1,0 +1,132 @@
+:root {
+    --primario: #db0034;
+    --secundario: #eeeeee;
+    --links: #ada9a9;
+    --bg-primario: #424242;
+    --bg-secundario: #101010;
+}
+
+.formContenedor i {
+    color: var(--links);
+}
+.tituloEdit{
+    color:#424242;
+    font-style: oblique;
+    margin-bottom: 20px;
+}
+.formContenedor {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 15px auto;
+    border: 0px 15px;
+    background-color: #eeeeee;
+    height: max-content 450px;
+    align-items: center;
+    padding: 20px;
+}
+
+.editForm {
+    padding: 20px 15px;
+    align-items: center auto;
+    padding: 15% 20%;
+    width: 100%;
+    align-items: center;
+}
+
+.control {
+    width: 100%;
+    align-items: center;
+}
+
+.formCE input {
+    margin-bottom: 15px;
+    margin: auto;
+    max-width: 500px;
+}
+
+.error-input-name,
+.error-input-price,
+.error-input-price2,
+.error-input-discount,
+.error-input-description,
+.error-input-description2,
+.error-input-image {
+color: #db0034;
+font-size: 14px;
+margin: auto;
+padding: 2px;
+border: 2px;
+}
+
+.elementForm label {
+    margin-bottom: 5px;
+    display: block;
+    align-items: center;
+}
+
+.espacios {
+    width: 100%;
+    padding: 8px;
+    align-items: center;
+}
+
+.botonR{
+    background-color: var(--primario);
+    width: 49%;
+    color: var(--secundario);
+    justify-content:space-between;
+    margin-top: 20px;
+}
+
+.botonG {
+    background-color: var(--bg-secundario);
+    width: 49%;
+    color: var(--secundario);
+    justify-content:space-between;
+    margin-top: 20px;
+}
+
+.botonFormB {
+    background-color: var(--bg-primario);
+    width: 50%;
+    color: var(--secundario);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.botonFormB:hover{
+    background-color: var(--primario);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.botonFormG {
+    background-color: var(--bg-primario);
+    width: 50%;
+    color: var(--secundario);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.botonFormG:hover{
+    background-color: var(--bg-secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.botonesCreate {
+    display: flex;
+    flex-direction: row;
+}
+
+.mensajeError {
+    font-size: 12px;
+    color: var(--primario);
+  }

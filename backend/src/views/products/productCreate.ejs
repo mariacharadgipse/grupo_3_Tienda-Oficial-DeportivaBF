@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', { title: 'Create' , stylesheet: ['/css/styles.css','/css/productCreate.css']}) %>
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main class="formContenedor">
+
+                <h2 class="tituloCreate"><strong>Nuevo Producto</strong></h2>
+
+                <form action="/products/create" method="POST" enctype="multipart/form-data" class="formCE">
+
+                    <label for="name" class="elementForm">Nombre del Producto</label>
+                    <input type="text" id="name" name="name" class="control"
+                        value="<%= locals.oldData && oldData.name ? oldData.name : null %>">
+                    <% if (locals.errors && errors.name) { %>
+                        <p class="mensajeError">
+                            <%= errors.name.msg %>
+                        </p>
+                        <% } %>
+                        <p class="error-input-name"></p>
+
+
+                            <label for="price" class="elementForm">Precio</label>
+                            <input type="text" id="price" name="price" class="control"
+                                value="<%= locals.oldData && oldData.price ? oldData.price : null %>">
+                            <% if (locals.errors && errors.price) { %>
+                                <p class="mensajeError">
+                                    <%= errors.price.msg %>
+                                </p>
+                                <% } %>
+                                <p class="error-input-price"></p>
+                                <p class="error-input-price2"></p>
+
+
+                                    <label for="discount" class="form-label">Descuento:</label>
+                                    <input type="text" id="discount" name="discount" placeholder="Ej: 15"
+                                        class="control"
+                                        value="<%= locals.oldData && oldData.discount ? oldData.discount : null %>">
+                                    <% if (locals.errors && errors.discount) { %>
+                                        <p class="mensajeError">
+                                            <%= errors.discount.msg %>
+                                        </p>
+                                        <% } %>
+                                        <p class="error-input-discount"></p>
+
+                                        <label for="idCategoryProduct" class="elementForm">Categoría</label>
+                                        <select id="idCategoryProduct" name="idCategoryProduct" class="control">
+                                            <option value="1">Calzados</option>
+                                            <option value="2">Accesorios</option>
+                                            <option value="3">Indumentaria</option>
+                                        </select>
+
+                                            <label for="description" class="elementForm">Descripción</label>
+                                            <textarea id="description" name="description" class="control"></textarea>
+                                            <p class="error-input-description"></p>
+                                            <p class="error-input-description2"></p>
+
+                                            <label for="idColor" class="elementForm">Colores</label>
+                                            <select id="idColor" name="idColor" class="control">
+                                                <option value="1" selected>blanco</option>
+                                                <option value="2">Negro</option>
+                                                <option value="3">Gris</option>
+                                                <option value="4">Rojo</option>
+                                                <option value="5">Azul</option>
+                                                <option value="6">Verde</option>
+                                                <option value="7">Amarillo</option>
+                                                <option value="8">Naranja</option>
+                                                <option value="9">Morado</option>
+                                                <option value="10">Rosa</option>
+                                                <option value="11">Marrón</option>
+                                                <option value="12">Beige</option>
+                                            </select>
+
+                                            <!-- <label for="idColor" class="elementForm">Colores</label>
+                                            <input type="text" id="idColor" name="idColor" class="control"
+                                                value="<#%= locals.oldData && oldData.idColor ? oldData.idColor : null %>">
+                                            <#% if (locals.errors && errors.idColor) { %>
+                                                <p class="mensajeError">
+                                                    <#%= errors.idColor.msg %>
+                                                </p>
+                                                <#% } %> -->
+
+                                            <label for="image" class="elementForm">Imágenes del
+                                                producto</label>
+                                            <input type="file" id="image" name="image" class="control"
+                                                accept=".jpg, .png" multiple></input>
+                                            
+                                                <p class="error-input-imageCE"></p>
+                                        <div class="botonesCreate">
+                                            <button type="reset" class="botonFormB">Borrar</button>
+                                            <button type="submit" class="botonFormG">Guardar</button>
+                                        </div>
+
+                </form>
+            </main>
+
+
+            <%- include('../partials/footer')%>
+
+                <script src="/js/validatorCreateEdit.js"></script>
+    </body>
+
+
+</html>

@@ -1,0 +1,113 @@
+/*====== Variables ======*/
+:root {
+  --primario: #db0034;
+  --secundario: #eeeeee;
+  --links: #ada9a9;
+  --bg-primario: #424242;
+  --bg-secundario: #101010;
+  --botones:#EAC926;
+}
+
+
+/*====== Basics ======*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+
+body {
+  min-height: 100vh;
+  margin: 0 px;
+  font-size: 10px;
+  overflow: none;
+}
+
+.main {
+  display: flex;
+  width: 98vw;
+  margin: auto;
+  border: 10px;
+  height: max-content 450px;
+
+}
+
+
+.banner {
+  width: 100%;
+  height: auto;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+}
+
+.tituloGeneral {
+  color: black;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.contGeneral{
+  display: block;
+  width: 100%;
+  padding: 5px;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.contProducts {
+  width: 100%;
+  justify-content: space-around
+}
+
+.titulo {
+  font-size: 20px;
+  text-align: left;
+  color: rgb(255, 255, 255);
+  background-color: var(--bg-secundario);
+  padding: 10px 50px;
+}
+
+.containerProduct {
+  display: block;
+  padding: 5px;
+  background-color: white;
+  width: 300px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin: 10px auto;
+}
+
+.containerProduct:hover {
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.fa-truck{
+  color:green;
+  border-radius: 100%;
+  border: 1px #39b54a;
+  background-color: solid #ebebeb;
+  font-size: 20px;
+}
+
+
+
+/*====== Media-Queries ======*/
+
+  
+  
+  /*@media (max-width:440px) {
+  logoCompletoSinFondo {
+    margin-left: 0;
+    padding: 0%;
+    width: 150px;
+    height: 80px;
+  }
+  }*/

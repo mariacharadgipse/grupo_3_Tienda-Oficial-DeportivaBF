@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('partials/head', { title: 'Página de inicio' , stylesheet: ['/css/styles.css','/css/index.css']}) %>
+
+    <body>
+        <%- include('partials/header') %>
+
+            <main>
+
+                <div class="banner">
+                    <a href="/products"><img src="img/bannerTOD1.jpg" width="400px" alt="banner1"></a>
+                </div>
+
+                <!-- ultima visita -->
+                <!-- <main class="main">
+                  <div class="contGeneral">
+                      <div class="col-12">
+                          <h2 class="tituloGeneral"><strong> Basado en tu última visita</strong></h2>
+                      </div>
+                      <div class="contProducts">
+                          <%# visited.forEach(product=> { %>
+                              <section class="product">
+                                  <a href="/products/detail/<%#= product.id %>">
+                                      <figure class="product-box_image">
+                                          <img src="/img/products/<%#= product.image %>" alt="imagen de producto"
+                                              width="90%" height="300px auto">
+                                      </figure>
+                                      <article>
+                                          <h2>$<#%= product.price %>
+                                          </h2>
+                                          <p>
+                                              <#%= product.description %>
+                                          </p>
+                                          <p>
+                                              <#%= product.name %>
+                                          </p>
+                                          <p>
+                                              <#%= product.category %>
+                                          </p>
+                                          <p>
+                                              <#%= product.colors %>
+                                          </p>
+
+                                      </article>
+                                      <div class="envio"><i class="fa-solid fa-truck"></i></div>
+                                  </a>
+                              </section>
+                              <%# }) %>
+                      </div>
+              </main> -->
+                <!-- /ultima visita -->
+
+                <!-- Ofertas -->
+                    <div class="contGeneral">
+
+                        <div class="col-12">
+                            <h1 class="titulo"><strong> Ofertas</strong></h1>
+                        </div>
+
+                        <!-- Show the "in-sale" products -->
+                        <div class="contProducts">
+                            <% inDiscount.forEach(product=> { %>
+                                
+                                <div class="containerProduct">
+
+                                    <a class="enlaces" href="/products/detail/<%= product.id %>">
+
+                                        <figure class="product-box_image">
+                                            <img src="/img/products/<%= product.image %>" alt="imagen de producto"
+                                                width="90%" height="300px auto">
+                                        </figure>
+                                        <article class="product-box-info">
+
+                                            <h2 class="priceProd">
+                                                <stong>$<%= product.price %>
+                                                </stong>
+                                            </h2>
+
+                                            <span class="discountProd">
+                                                <%= product.discount %>% OFF
+                                            </span>
+
+                                            <h3 class="nameProd">
+                                                <stong>
+                                                    <%= product.name %>
+                                                </stong>
+                                            </h3>
+
+                                        </article>
+                                    </a>
+                                    
+                                </div>
+                                <% }) %>
+                        </div>
+
+            </main>
+
+            <div id="contactoFooter"></div>
+            <%- include('partials/footer') %>
+    </body>
+
+</html>

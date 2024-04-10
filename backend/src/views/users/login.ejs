@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', { title: 'Login' , stylesheet: ['/css/styles.css','/css/login.css']}) %>
+
+    <body>
+        <%- include('../partials/header') %>
+            <main>
+
+                <div class="login-container">
+                    <img class="tienda" src="/img/Tienda.png" alt="">
+
+                    <div class="login">
+                        <p>
+                            <img class="logoSinFondo" src="/img/LogoSinFondo.png" alt="logoSinFondo">
+                        <h2>Ingresá a tu cuenta</h2>
+                        </p>
+                        <form action="/users/login" method="POST">
+                            <p>
+                                <label>Correo electrónico</label>
+                                <input type="text" name="email" class="color-input equal-size ">
+                            </p>
+                            <p>
+                                <label>Clave</label>
+                                <input type="password" name="password" class="color-input equal-size ">
+                            </p>
+                            <div class="contenedor-checkbox">
+                                <label for="rememberme">¿Recordar?</label>
+                                <input type="checkbox" name="rememberme" id="rememberme">
+                                    
+                                <a href="#">¿Olvidó la clave?</a>
+                            </div>
+
+                            <p>
+                                <button type="submit" class="equal-size">LOGIN</button>
+                            </p>
+                            <a href="/users/register">¿Nuevo miembro? Registrarse</a>
+                        </form>
+                    </div>
+                </div>
+
+            </main>
+            <%- include('../partials/footer') %>
+
+    </body>
+
+</html>
